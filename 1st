@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+void toh(int n,char From,char To,char Using)
+{
+
+    if(n==1)
+    {
+        cout<<"move "<<n<<" from "<<From<<" to "<<To<<" using "<<Using<<endl;
+        return;
+    }
+    toh(n-1,From,Using,To);
+
+    cout<<"move "<<n<<" from "<<From<<" to "<<To<<" using "<<Using<<endl;
+    toh(n-1,Using,To,From);
+
+
+
+
+
+
+}
+int main()
+{
+    int n=3;
+    char From='A',To='C',Using='B';
+    toh(n,From,To,Using);
+}
+
